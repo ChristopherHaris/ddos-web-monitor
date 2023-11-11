@@ -13,7 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CalendarDateRangePicker } from "@/components/dashboard/date-range-picker";
 import { MainNav } from "@/components/dashboard/main-nav";
 import { Overview } from "@/components/dashboard/overview";
-import { RecentSales } from "@/components/dashboard/recent-login";
+import { RecentLogin } from "@/components/dashboard/recent-login";
 import { Search } from "@/components/dashboard/search";
 import { UserNav } from "@/components/dashboard/user-nav";
 
@@ -188,7 +188,7 @@ export default function DashboardLayout({ children }) {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <RecentSales />
+                    <RecentLogin />
                   </CardContent>
                 </Card>
               </div>

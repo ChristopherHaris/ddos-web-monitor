@@ -9,7 +9,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CalendarDateRangePicker } from "@/components/dashboard/date-range-picker";
 import { Overview } from "@/components/dashboard/overview";
-import { RecentSales } from "@/components/dashboard/recent-login";
+import { RecentLogin } from "@/components/dashboard/recent-login";
 
 export default function Produk() {
   return (
@@ -143,7 +143,7 @@ export default function Produk() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <RecentSales />
+                <RecentLogin />
               </CardContent>
             </Card>
           </div>
@@ -269,7 +269,7 @@ export default function Produk() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <RecentSales />
+                <RecentLogin />
               </CardContent>
             </Card>
           </div>
