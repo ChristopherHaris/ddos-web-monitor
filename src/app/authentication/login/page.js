@@ -4,6 +4,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { UserAuthForm } from "@/components/authentication/user-login-form";
+import AuthLayout from '../layout';
 
 export const metadata = {
   title: "Login",
@@ -38,15 +39,14 @@ export default function AuthenticationPage() {
             >
               <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
             </svg>
-            DDOROCARE
+            DDOS Monitor
           </div>
           <div className="relative z-20 mt-auto">
             <blockquote className="space-y-2">
               <p className="text-lg">
-                &ldquo;Riset, Edukasi dan Pengolahan Sampah Berbasis
-                Pemberdayaan Masyarakat sejak 2019&rdquo;
+                &ldquo;DDOS Monitor: Preventing DDOS Attacks with AI&rdquo;
               </p>
-              <footer className="text-sm">ddorocareid</footer>
+              <footer className="text-sm">UBM University</footer>
             </blockquote>
           </div>
         </div>
@@ -84,3 +84,7 @@ export default function AuthenticationPage() {
     </>
   );
 }
+
+AuthenticationPage.getLayout = function(page) {
+  return <AuthLayout>{page}</AuthLayout>;
+};

@@ -9,7 +9,7 @@ export function MainNav({ className, ...props }) {
       {...props}
     >
       <Link
-        href="/audit"
+        href="/"
         className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
       >
         Home
