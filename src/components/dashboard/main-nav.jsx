@@ -14,6 +14,12 @@ export function MainNav({ className, ...props }) {
       >
         Home
       </Link>
+      <Link
+        href="/logs"
+        className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+      >
+        Logs
+      </Link>
     </nav>
   );
 }
