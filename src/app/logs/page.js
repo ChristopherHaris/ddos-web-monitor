@@ -51,11 +51,13 @@ const generateRandomData = () => {
 
 export default function Logs() {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const result = generateRandomData();
       setData((prevData) => [...prevData, result]);
+      setLoading(false);
     };
     for (let i = 0; i < 50; i++) {
       fetchData();
@@ -69,7 +71,7 @@ export default function Logs() {
         <h2 className="text-3xl font-bold tracking-tight">Logs</h2>
       </div>
       <div className="container mx-auto py-10">
-        <DataTable columns={columns} data={data} />
+        <DataTable columns={columns} data={data} isLoading={loading} />
       </div>
     </div>
   );
