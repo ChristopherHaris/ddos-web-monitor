@@ -17,7 +17,7 @@ const getRandomDate = () => {
   const year = 2023;
   const month = getRandomNumber(1, 12);
   const day = getRandomNumber(1, 28);
-  return `${month}/${day}/${year}`;
+  return `${day}/${month}/${year}`;
 };
 
 const getRandomTime = () => {
@@ -27,14 +27,19 @@ const getRandomTime = () => {
   return `${hours}:${minutes}:${seconds}`;
 };
 
-const getRandomProtocol = () => {
-  const protocols = ["http", "https"];
-  return protocols[getRandomNumber(0, 1)];
+const getRandomSecond = () => {
+  const seconds = getRandomNumber(0, 999).toString().padStart(2, "0");
+  return `${seconds}s`;
 };
 
-const getRandomAttackType = () => {
-  const attackTypes = ["Brute Force", "DDoS", "SQL Injection", "XSS"];
-  return attackTypes[getRandomNumber(0, 3)];
+const getRandomProtocol = () => {
+  const protocols = ["HTTP", "HTTPS", "ICMP", "TCP", "UDP"];
+  return protocols[getRandomNumber(0, 4)];
+};
+
+const getRandomStatus = () => {
+  const attackTypes = ["Normal", "Malicious"];
+  return attackTypes[getRandomNumber(0, 1)];
 };
 
 const generateRandomData = () => {
@@ -42,10 +47,11 @@ const generateRandomData = () => {
     id: nanoid(),
     date: getRandomDate(),
     time: getRandomTime(),
-    port: getRandomNumber(100, 999).toString(),
     protocol: getRandomProtocol(),
-    ip: getRandomIpAddress(),
-    attacktype: getRandomAttackType(),
+    dst: getRandomIpAddress(),
+    port: getRandomNumber(100, 999).toString(),
+    count: getRandomSecond(),
+    status: getRandomStatus(),
   };
 };
 
@@ -59,7 +65,7 @@ export default function Logs() {
       setData((prevData) => [...prevData, result]);
       setLoading(false);
     };
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 100; i++) {
       fetchData();
     }
   }, [])

@@ -1,14 +1,13 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { ColumnDef } from "@tanstack/react-table"
-import { ArrowUpDown, MoreHorizontal } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { ColumnDef } from "@tanstack/react-table";
+import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
 
 export const columns = [
-  
   {
     accessorKey: "date",
     header: ({ column }) => {
@@ -20,7 +19,7 @@ export const columns = [
           Date
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
-      )
+      );
     },
   },
   {
@@ -34,33 +33,47 @@ export const columns = [
           Time
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
-      )
+      );
     },
-  },
-  {
-    accessorKey: "port",
-    header: "Port",
   },
   {
     accessorKey: "protocol",
     header: "Protocol",
   },
   {
-    accessorKey: "ip",
-    header: "IP",
+    accessorKey: "dst",
+    header: "Dst",
   },
   {
-    accessorKey: "attacktype",
+    accessorKey: "port",
+    header: "Port",
+  },
+  {
+    accessorKey: "count",
     header: ({ column }) => {
       return (
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Attack Type
+          Count
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
-      )
+      );
     },
   },
-]
+  {
+    accessorKey: "status",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Status
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
+  },
+];
