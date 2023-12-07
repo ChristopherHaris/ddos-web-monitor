@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
@@ -9,28 +7,14 @@ import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 
 export const columns = [
   {
-    accessorKey: "date",
+    accessorKey: "dt",
     header: ({ column }) => {
       return (
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Date
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
-  },
-  {
-    accessorKey: "time",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Time
+          Date/Time
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
@@ -49,7 +33,7 @@ export const columns = [
     header: "Port",
   },
   {
-    accessorKey: "count",
+    accessorKey: "tot_dur",
     header: ({ column }) => {
       return (
         <Button
@@ -63,7 +47,7 @@ export const columns = [
     },
   },
   {
-    accessorKey: "status",
+    accessorKey: "classification",
     header: ({ column }) => {
       return (
         <Button
